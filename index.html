@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Icons of Gold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+[hidden]{display:none!important} img{max-width:100%}
+:root{
+  color-scheme: dark;
+  --void:#0A0907; --panel:#12100C; --raise:#1A1711;
+  --line:#3A3223; --line-soft:#26211A;
+  --gold:#CDA85E; --gold-hi:#E8CD8E;
+  --ink:#EEE7D7; --mute:#958C7B; --dim:#6B6456;
+  --yellow:#F1DF4B;
+  --sans:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --serif:"Cormorant Garamond", Garamond, "Times New Roman", serif;
+}
+*{box-sizing:border-box}
+body{background:var(--void);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(16px,4vw,48px);padding-block:40px 96px}
+a{color:var(--gold-hi)}
+h1,h2,h3{text-wrap:balance;margin:0;font-weight:300}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+p{margin:0;max-width:65ch}
+:focus-visible{outline:1px solid var(--gold-hi);outline-offset:3px}
+
+/* page head */
+.head{display:grid;gap:18px;padding-bottom:40px;border-bottom:1px solid var(--line-soft)}
+.head h1{font-size:clamp(34px,5vw,56px);letter-spacing:.02em}
+.head p{color:var(--mute)}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.jump a{font-family:var(--mono);font-size:12px;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.jump a:hover{border-color:var(--gold)}
+
+section{padding-top:64px}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.sec-h h2{font-size:28px}
+
+/* boards */
+.board{border-radius:22px;overflow:hidden;margin-bottom:28px;position:relative}
+.board-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 4px 0}
+.board-meta b{font-weight:500}
+.board-meta span{color:var(--mute);font-size:14px}
+.like{font-family:var(--mono);font-size:12px;background:none;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+.like[aria-pressed="true"]{background:var(--yellow);color:#15130B;border-color:var(--yellow)}
+.boardwrap{margin-bottom:56px}
+.imgc{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+
+/* A : catalogue plate */
+.bA{background:#050505;border:1px solid var(--line-soft);padding:clamp(20px,4vw,48px);display:grid;gap:32px;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}
+.bA .t{display:flex;flex-direction:column;gap:18px}
+.bA h3{font-size:clamp(36px,5vw,60px);font-weight:200;letter-spacing:.14em;text-transform:uppercase;line-height:1.02;color:var(--gold-hi)}
+.bA .intro{color:#BEB5A3}
+.bA .packs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto}
+.bA .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.bA figure{margin:0;display:grid;gap:8px}
+.bA figcaption{display:grid;gap:2px}
+.bA .no{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--dim)}
+.bA .nm{font-size:13px;letter-spacing:.04em}
+.bA .foot{grid-column:1/-1;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line-soft);padding-top:14px}
+
+/* B : cabinet, chiaroscuro */
+.bB{background:radial-gradient(120% 90% at 20% 10%,#1B160E 0%,#0B0906 55%,#060504 100%);padding:clamp(20px,4vw,48px);display:grid;gap:28px;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.bB .hero{position:relative}
+.bB .hero img{border-radius:4px}
+.bB .label{font-family:var(--serif);font-style:italic;font-size:17px;color:#CFC3A6;margin-top:10px}
+.bB h3{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6vw,76px);line-height:.95;color:var(--gold-hi)}
+.bB h3 em{display:block;font-size:.42em;letter-spacing:.3em;text-transform:uppercase;font-style:normal;font-family:var(--sans);font-weight:300;color:var(--mute);margin-bottom:14px}
+.bB .r{display:flex;flex-direction:column;gap:20px}
+.bB .intro{font-family:var(--serif);font-size:20px;line-height:1.4;color:#D9CFBA}
+.bB .row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.bB .row img{border-radius:3px}
+.bB .packs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto}
+.bB .foot{grid-column:1/-1;font-family:var(--serif);font-style:italic;color:var(--mute);font-size:16px}
+
+/* C : arches */
+.bC{background:#040404;padding:clamp(20px,4vw,48px);display:grid;gap:28px;text-align:center}
+.bC h3{font-weight:200;font-size:clamp(30px,4.4vw,52px);letter-spacing:.38em;text-transform:uppercase;padding-left:.38em;color:var(--gold-hi)}
+.bC .intro{margin:0 auto;color:#BEB5A3}
+.bC .arches{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:end}
+.bC .arch{border:1px solid var(--line);border-radius:999px 999px 10px 10px;padding:6px;display:grid;gap:10px}
+.bC .arch img{border-radius:999px 999px 6px 6px;aspect-ratio:3/4;object-fit:cover}
+.bC .arch.big{transform:translateY(-18px);border-color:var(--gold)}
+.bC .arch span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding-bottom:8px}
+.bC .packs{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:14px;justify-content:center}
+.bC .packs img{border-radius:12px}
+.bC .foot{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+
+
+/* C : context */
+.bCx{background:#070605;padding:clamp(20px,4vw,48px);display:grid;gap:14px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.bCx .t{grid-column:span 2;display:flex;flex-direction:column;gap:16px;justify-content:center;padding-right:12px}
+.bCx h3{font-size:clamp(34px,4.6vw,56px);font-weight:300;letter-spacing:-.01em;line-height:1;color:var(--ink)}
+.bCx h3 span{color:var(--gold-hi)}
+.bCx .intro{color:#BEB5A3}
+.bCx .big{grid-column:span 2;grid-row:span 2}
+.bCx figure{margin:0;position:relative}
+.bCx figcaption{position:absolute;left:10px;bottom:10px;right:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:#D8CFBC;text-shadow:0 1px 6px #000}
+.bCx .packs{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bCx .foot{grid-column:1/-1;border-top:1px solid var(--line-soft);padding-top:14px}
+/* D : rococo */
+.bD{background:radial-gradient(80% 70% at 50% 30%,#1A140B,#080604 70%);padding:clamp(24px,5vw,64px);text-align:center;display:grid;gap:26px;position:relative}
+.bD::before{content:"";position:absolute;inset:14px;border:1px solid #5A4724;border-radius:28px;pointer-events:none;box-shadow:inset 0 0 0 5px #080604, inset 0 0 0 6px #3E311A}
+.bD .eyebrow{font-family:var(--serif);font-style:italic;font-size:16px;letter-spacing:.04em;text-transform:none;color:#BFA77A}
+.bD h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(48px,7vw,92px);line-height:.9;color:var(--gold-hi)}
+.bD .intro{font-family:var(--serif);font-size:20px;line-height:1.4;color:#D9CFBA;margin:0 auto;max-width:48ch}
+.bD .row{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:16px;align-items:center}
+.bD .row img{border-radius:50%/42%;border:1px solid #5A4724;padding:4px;background:#0B0805}
+.bD .row .mid img{border-radius:50%/46%}
+.bD .sub{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.bD .sub img{border-radius:10px}
+.bD .foot{font-family:var(--serif);font-style:italic;color:var(--mute);font-size:16px}
+/* E : brutalist */
+.bE{background:#161614;padding:clamp(16px,3vw,32px);display:grid;gap:8px;grid-template-columns:repeat(6,minmax(0,1fr))}
+.bE .t{grid-column:span 6;display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;padding:8px 0 12px;border-bottom:4px solid #2A2A27}
+.bE h3{font-weight:600;font-size:clamp(40px,8vw,112px);line-height:.85;letter-spacing:-.03em;text-transform:uppercase;color:#E9E4D8}
+.bE h3 span{color:var(--gold)}
+.bE .intro{color:#A9A395;max-width:38ch;font-size:14px}
+.bE .hero{grid-column:span 4;grid-row:span 2}
+.bE .c2{grid-column:span 2}
+.bE img{border-radius:0}
+.bE .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8F8A7E;padding-top:6px}
+.bE .foot{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;border-top:4px solid #2A2A27;padding-top:10px}
+@media (max-width:880px){
+  .bCx{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bCx .t,.bCx .packs{grid-column:1/-1}
+  .bD .row{grid-template-columns:1fr}
+  .bD .row>div:not(.mid){display:none}
+  .bD .sub{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bE{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bE .t,.bE .hero{grid-column:1/-1}
+  .bE .c2{grid-column:span 1}
+}
+.picks{grid-template-columns:repeat(5,1fr)!important}
+
+/* library */
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{font:inherit;font-size:13px;background:none;color:var(--mute);border:0;border-radius:999px;padding:6px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--raise);color:var(--ink)}
+select{font:inherit;font-size:13px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:7px 12px}
+.count{font-family:var(--mono);font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
+.status{font-size:13px;color:var(--mute);margin-top:10px}
+.lib{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line-soft);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card .ph{position:relative}
+.card .ph img{display:block;width:100%;aspect-ratio:1;object-fit:cover;cursor:zoom-in}
+.tier{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:rgba(8,7,5,.72);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:3px 9px}
+.tier.legendary{border-color:var(--yellow);color:var(--yellow)}
+.tier.super{border-color:var(--gold);color:var(--gold-hi)}
+.orig{position:absolute;top:10px;right:10px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);background:rgba(8,7,5,.72);border-radius:999px;padding:3px 9px}
+.card .bd{padding:14px 14px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h4{margin:0;font-size:15px;font-weight:500}
+.card .cap{color:var(--mute);font-size:13.5px;line-height:1.45}
+.card .deck{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 14px 14px}
+.picks button{font-family:var(--mono);font-size:11.5px;background:none;color:var(--mute);border:1px solid var(--line);border-radius:8px;padding:7px 0;cursor:pointer}
+.picks button.on{color:var(--ink);border-color:var(--ink)}
+.picks button[aria-pressed="true"]{background:var(--yellow);border-color:var(--yellow);color:#15130B}
+
+/* copy table */
+.tbl{overflow-x:auto;border:1px solid var(--line-soft);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line-soft)}
+th{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+td:first-child{color:var(--mute)}
+tr:last-child td{border-bottom:0}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.note{border-top:1px solid var(--line);padding-top:14px;display:grid;gap:8px}
+.note h3{font-size:17px;font-weight:500}
+.note p{color:var(--mute);font-size:14px}
+
+/* lightbox */
+dialog{background:transparent;border:0;padding:0;max-width:min(92vw,900px)}
+dialog::backdrop{background:rgba(0,0,0,.86)}
+dialog img{display:block;width:100%;height:auto;border-radius:10px}
+dialog p{color:var(--ink);text-align:center;margin:12px auto 0}
+
+@media (max-width:880px){
+  .bA,.bB{grid-template-columns:minmax(0,1fr)}
+  .bA .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bB .row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bC .arches{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bC .arches .arch:nth-child(n+4){display:none}
+  .bC .arch.big{transform:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .card .ph img{transition:filter .3s}
+  .card .ph img:hover{filter:brightness(1.12)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="head">
+    <div class="eyebrow">SETZ × DGLD · Drop review · Draft 2</div>
+    <h1>Icons of Gold</h1>
+    <p>Five directions for the redesign, and 65 cards rendered in each of them (325 in total) to choose from. Every card follows SETZ's format: a 1:1 image with no frame or text, since the app adds the rarity badge. Tick the cards you want to keep. Picks are saved for everyone who opens this page.</p>
+    <nav class="jump" aria-label="Sections">
+      <a href="#boards">Directions</a><a href="#library">Card library</a><a href="#copy">Copy</a><a href="#notes">Open points</a>
+    </nav>
+  </header>
+
+  <section id="boards">
+    <div class="sec-h"><div><div class="eyebrow">Redesign</div><h2>Five directions</h2></div></div>
+
+    <div class="boardwrap">
+      <div class="board bA">
+        <div class="t">
+          <div class="eyebrow">SETZ · Series 01 · Au 79</div>
+          <h3>Icons<br>of Gold</h3>
+          <p class="intro">Things people buried with kings, fought wars over and sent into space. Every card in this set is backed by DGLD, so the gold part is real.</p>
+          <div class="packs"><img class="imgc" src="img/pack/A_box.webp" alt="Black box with gold hairline border, Icons of Gold"><img class="imgc" src="img/pack/A_pack.webp" alt="Black foil booster pack with a Lady Fortuna bar"></div>
+        </div>
+        <div class="grid" id="gridA"></div>
+        <div class="foot"><span class="eyebrow">Backed by allocated Swiss gold · MKS PAMP custody</span><span class="eyebrow">65 objects · 1 element</span></div>
+      </div>
+      <div class="board-meta"><div><b>A · Vitrine.</b> <span>Museum catalogue. Every object gets the same black basalt plinth and a single spotlight. The most neutral of the five, and the closest to SETZ's Optimus set.</span></div><button class="like" data-board="A" aria-pressed="false">Prefer A</button></div>
+    </div>
+
+    <div class="boardwrap">
+      <div class="board bB">
+        <div class="hero">
+          <img class="imgc" src="img/B/tut.webp" alt="Tutankhamun's mask on black velvet in window light">
+          <div class="label">Tutankhamun's Mask. About 10 kg of gold, buried for roughly 3,200 years.</div>
+        </div>
+        <div class="r">
+          <h3><em>SETZ · Series 01</em>Icons of Gold</h3>
+          <p class="intro">Things people buried with kings, fought wars over and sent into space. Every card in this set is backed by DGLD, so the gold part is real.</p>
+          <div class="row" id="rowB"></div>
+          <div class="packs"><img class="imgc" src="img/pack/B_box.webp" alt="Black box on velvet"><img class="imgc" src="img/pack/B_pack.webp" alt="Black foil pack on velvet"></div>
+        </div>
+        <div class="foot">Au 79 · allocated Swiss gold, in the custody of MKS PAMP</div>
+      </div>
+      <div class="board-meta"><div><b>B · Cabinet.</b> <span>Dutch still life: black velvet, one window light, warm shadows. The most painterly of the five. It also looks the least like other NFT drops.</span></div><button class="like" data-board="B" aria-pressed="false">Prefer B</button></div>
+    </div>
+
+    <div class="boardwrap">
+      <div class="board bCx">
+        <div class="t">
+          <div class="eyebrow">SETZ · Series 01 · Au 79</div>
+          <h3>Icons of <span>Gold</span></h3>
+          <p class="intro">Things people buried with kings, fought wars over and sent into space. Every card in this set is backed by DGLD, so the gold part is real.</p>
+        </div>
+        <figure class="big"><img class="imgc" src="img/C/goodbar.webp" alt="PAMP cast bar on a refinery tray"><figcaption>No. 11 · The Good Delivery Bar</figcaption></figure>
+        <figure><img class="imgc" src="img/C/tut.webp" alt="Tutankhamun's mask before a carved wall"><figcaption>Tutankhamun's Mask</figcaption></figure>
+        <figure><img class="imgc" src="img/C/key.webp" alt="Gold key before a vault door"><figcaption>The Key</figcaption></figure>
+        <figure><img class="imgc" src="img/C/visor.webp" alt="Gold visor on lunar dust"><figcaption>The Visor</figcaption></figure>
+        <figure><img class="imgc" src="img/C/cheese.webp" alt="Gold Emmental on slate"><figcaption>The Emmental</figcaption></figure>
+        <div class="packs"><img class="imgc" src="img/pack/C_box.webp" alt="Black box by a jewellery tray"><img class="imgc" src="img/pack/C_pack.webp" alt="Black pack with Lady Fortuna"></div>
+        <figure><img class="imgc" src="img/C/vreneli.webp" alt="2025 Vreneli on alpine rock"><figcaption>The Vreneli</figcaption></figure>
+        <figure><img class="imgc" src="img/C/dgld_front.webp" alt="DGLD medallion"><figcaption>The DGLD Medallion</figcaption></figure>
+        <div class="foot"><span class="eyebrow">Backed by allocated Swiss gold · MKS PAMP custody</span></div>
+      </div>
+      <div class="board-meta"><div><b>C · Context.</b> <span>Still black, but each object brings one or two quiet props from its own world: a refinery tray for the bar, carved stone for Tut, lunar dust for the visor, slate for the cheese. The most narrative of the five.</span></div><button class="like" data-board="C" aria-pressed="false">Prefer C</button></div>
+    </div>
+
+    <div class="boardwrap">
+      <div class="board bD">
+        <div class="eyebrow">SETZ presents · Series the First</div>
+        <h3>Icons of Gold</h3>
+        <p class="intro">Things people buried with kings, fought wars over and sent into space. Every card in this set is backed by DGLD, so the gold part is real.</p>
+        <div class="row">
+          <div><img class="imgc" src="img/D/rose.webp" alt="Midas' rose on a gilded bracket"></div>
+          <div class="mid"><img class="imgc" src="img/D/egg.webp" alt="Imperial egg on a gilded rococo bracket"></div>
+          <div><img class="imgc" src="img/D/apple.webp" alt="Golden apple on a gilded bracket"></div>
+        </div>
+        <div class="sub" id="subD"></div>
+        <div class="foot">Au 79 · allocated Swiss gold, kept by MKS PAMP in Ticino</div>
+      </div>
+      <div class="board-meta"><div><b>D · Rococo.</b> <span>Gilded Louis XV brackets, black silk damask, candlelight. Playful and theatrical, but still gold on black. It suits the myth, art and royal cards best.</span></div><button class="like" data-board="D" aria-pressed="false">Prefer D</button></div>
+    </div>
+
+    <div class="boardwrap">
+      <div class="board bE">
+        <div class="t"><h3>Icons<br>of <span>Gold</span></h3><p class="intro">Things people buried with kings, fought wars over and sent into space. Every card in this set is backed by DGLD, so the gold part is real.</p></div>
+        <div class="hero"><img class="imgc" src="img/E/fracture.webp" alt="Concrete cube split open around a gold core"><div class="lbl">Fracture · Brutalist proposal</div></div>
+        <div class="c2"><img class="imgc" src="img/E/monolith.webp" alt="Gold monolith on concrete"><div class="lbl">Monolith</div></div>
+        <div class="c2"><img class="imgc" src="img/E/goodbar.webp" alt="PAMP bar on concrete"><div class="lbl">Good Delivery Bar</div></div>
+        <div class="c2"><img class="imgc" src="img/E/stack.webp" alt="Stack of bars on concrete"><div class="lbl">The Vault</div></div>
+        <div class="c2"><img class="imgc" src="img/pack/E_box.webp" alt="Black box in a concrete room"><div class="lbl">Box</div></div>
+        <div class="c2"><img class="imgc" src="img/pack/E_pack.webp" alt="Black pack in a concrete room"><div class="lbl">Pack</div></div>
+        <div class="foot"><span class="lbl">SETZ · Series 01 · Au 79</span><span class="lbl">Backed by allocated Swiss gold</span></div>
+      </div>
+      <div class="board-meta"><div><b>E · Brutalist.</b> <span>Raw board-marked concrete, one hard slot of light. The most sober of the five, and the natural home for the brutalist sculptures and the refinery cards.</span></div><button class="like" data-board="E" aria-pressed="false">Prefer E</button></div>
+    </div>
+  </section>
+
+  <section id="library">
+    <div class="sec-h">
+      <div><div class="eyebrow">Pick and choose</div><h2>Card library</h2></div>
+      <div class="tools">
+        <div class="seg" role="group" aria-label="Direction shown">
+          <button data-dir="A" aria-pressed="true">A Vitrine</button><button data-dir="B" aria-pressed="false">B Cabinet</button><button data-dir="C" aria-pressed="false">C Context</button><button data-dir="D" aria-pressed="false">D Rococo</button><button data-dir="E" aria-pressed="false">E Brutalist</button>
+        </div>
+        <label class="sr" for="deckf" hidden>Deck</label>
+        <select id="deckf" aria-label="Filter by deck"></select>
+        <select id="pickf" aria-label="Filter by pick"><option value="all">All cards</option><option value="picked">Picked only</option></select>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <p class="status" id="status">Loading picks.</p>
+    <div class="lib" id="lib" style="margin-top:18px"></div>
+  </section>
+
+  <section id="copy">
+    <div class="sec-h"><div><div class="eyebrow">Language</div><h2>Copy, cleaned up</h2></div></div>
+    <div class="tbl"><table>
+      <thead><tr><th>Current</th><th>Issue</th><th>Proposal</th></tr></thead>
+      <tbody>
+        <tr><td>Legendary objects. Timeless value.</td><td>Punchy fragment pair; "value" reads as an investment promise</td><td>Series 01 · Au 79</td></tr>
+        <tr><td>From ancient tombs to lost treasures, royal crowns to modern masterpieces — a collection of the world's most famous gold objects, reimagined for a new era.</td><td>Em dash, "from X to Y", "reimagined for a new era"</td><td>Things people buried with kings, fought wars over and sent into space. Every card in this set is backed by DGLD, so the gold part is real.</td></tr>
+        <tr><td>Real history. Real value. Backed by digital gold.</td><td>Rule of three, repeated "real"</td><td>Removed. The intro already says it.</td></tr>
+        <tr><td>Same element. Different legends. / Same element. A brighter future.</td><td>The same tic twice, and vague</td><td>65 objects · 1 element</td></tr>
+        <tr><td>Eternal King · Power in Gold · Wealth Endures · A Global Passion</td><td>Generic taglines that could describe anything</td><td>One specific, checkable fact per card (see library)</td></tr>
+        <tr><td>Real History / Iconic Artifacts / Real Value</td><td>Decorative feature triad</td><td>Removed</td></tr>
+        <tr><td>Collect history. Hold value. / Digital collectibles for a brighter tomorrow.</td><td>Slogan clichés</td><td>Backed by allocated Swiss gold · MKS PAMP custody</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="notes">
+    <div class="sec-h"><div><div class="eyebrow">Before finals</div><h2>Open points</h2></div></div>
+    <div class="notes">
+      <div class="note"><h3>"Backed by DGLD" needs a definition</h3><p>How much DGLD sits behind each card, and whether that changes with rarity. This is crypto-asset marketing under MiCA, so legal should check the wording before anything goes out.</p></div>
+      <div class="note"><h3>PAMP marks are placeholders</h3><p>The model garbles logos. For the finals, the PAMP and Lady Fortuna cards get re-rendered with the official artwork as a reference image. One draft stamped a competitor's name and was redone.</p></div>
+      <div class="note"><h3>Redos already queued</h3><p>The Strip came out as a ring in most styles, so it needs a clearer prompt. The DGLD medallion follows the reference but the D is slightly soft. For finals it gets a tighter edit pass.</p></div>
+      <div class="note"><h3>IP was cleared out</h3><p>The trophy is now a generic loving cup, the medal has no rings, and the jewelled egg carries no Fabergé name. The Ethereum and Bitcoin marks are open, but it's worth a final check with SETZ.</p></div>
+      <div class="note"><h3>Facts to verify</h3><p>Every caption is written to be checkable. Before anything ships, check the Tut mask weight (10.23 kg), the 1912 medal fact and the art-history dates against a source.</p></div>
+      <div class="note"><h3>Vreneli and artworks</h3><p>The 2025 Vreneli design belongs to Swissmint (artist Chiara Principe), so SETZ needs Swissmint's permission to sell it as an NFT. The Klimt, Cellini and Ghiberti works are public domain, but museum photos can carry their own rights. We render our own version, so this is low risk, but it's worth a check.</p></div>
+    </div>
+  </section>
+</div>
+
+<dialog id="lb"><img id="lbimg" alt=""><p id="lbcap"></p></dialog>
+
+<script>
+const CARDS=[
+ ["tut","Tutankhamun's Mask","About 10 kg of gold, buried for roughly 3,200 years.","History","super",1],
+ ["wreath","The Vergina Wreath","Oak leaves in hammered gold, made for a Macedonian king's tomb.","History","rare",1],
+ ["egg","The Imperial Egg","An Easter present that took about a year to make.","History","super",1],
+ ["sundisc","The Sun Mask","Andean goldsmiths called gold the sweat of the sun.","History","common",1],
+ ["nugget","The Nugget","Designed by geology, over a few million years.","Science","common",1],
+ ["doubloon","The Doubloon","Spanish 8 escudos. The coin pirates were actually after.","History","common",1],
+ ["ark","The Ark","Overlaid with pure gold, inside and out, as Exodus specifies.","Myth","rare",1],
+ ["dragon","The Dragon","Holds a pearl and guards nothing. A dragon with its priorities in order.","Myth","rare",1],
+ ["record","The Golden Record","Gold-plated copper, launched in 1977, the year PAMP began producing Good Delivery gold.","Science","legendary",1],
+ ["medal","The Medal","Mostly silver since 1912, with at least 6 g of gold on top.","Playful","rare",1],
+ ["goodbar","The Good Delivery Bar","Serial, 999.9, the PAMP clover. Every one traceable to a single number.","Mine to vault","super",1],
+ ["trophy","The Cup","Two handles, so two people can argue over it.","Playful","common",1],
+ ["fortuna","Lady Fortuna","PAMP's best-known design: Fortuna and her cornucopia, on 100 g of gold.","PAMP & Swiss","legendary",0],
+ ["kilobar","The Kilo","1,000 g, 999.9 fine, one serial number. Easy to verify, hard to pocket.","Mine to vault","rare",0],
+ ["granules","Casting Grain","Gold before anyone has decided what it'll become.","Mine to vault","common",0],
+ ["pour","The Pour","Gold melts at 1,064 °C, then takes whatever shape is waiting for it.","Mine to vault","rare",0],
+ ["vreneli","The Vreneli","The 2025 jubilee 100 franc Vreneli. After a century in profile, Helvetia faces forward.","PAMP & Swiss","super",0],
+ ["watch","The Pocket Watch","Swiss time, kept in gold.","PAMP & Swiss","rare",0],
+ ["cowbell","The Cowbell","Swiss, loud, and worth more than the cow.","Playful","common",0],
+ ["cheese","The Emmental","Real Emmental gets its holes from bacteria. These came from the mould.","Playful","common",0],
+ ["ibex","The Ibex","Nearly hunted out of the Alps in the 1800s. It came back.","PAMP & Swiss","common",0],
+ ["quartz","Gold in Quartz","How most gold is found: threaded through rock.","Science","super",0],
+ ["visor","The Visor","A thin film of gold keeps the sun out of an astronaut's eyes.","Science","super",0],
+ ["mirror","The Mirror","Space telescopes coat their mirrors in gold. It reflects infrared extremely well.","Science","rare",0],
+ ["au79","Element 79","79 protons. Everything else in this set follows from that.","Science","common",0],
+ ["chip","The Chip","Almost every phone has a little gold inside. It doesn't corrode.","Science","common",0],
+ ["sol","Sol","Alchemists drew gold as a circle with a dot. Finished, complete.","Myth","common",0],
+ ["bitcoin","The Coin","Digital scarcity, cast in the older kind.","Crypto","rare",0],
+ ["eth","The Octahedron","The Ethereum diamond, in a material with 5,000 years of history.","Crypto","rare",0],
+ ["key","The Key","Self-custody, in its original form.","Crypto","common",0],
+ ["chain","The Chain","Every link checked. Jewellers got there before blockchains did.","Crypto","common",0],
+ ["bull","The Bull","Charges up. Gold has seen plenty of these.","Crypto","common",0],
+ ["bear","The Bear","Swipes down. Gold has seen plenty of these too.","Crypto","common",0],
+ ["ladyfortuna","Fortuna","The Roman goddess of luck, with one hand on the rudder.","Myth","super",0],
+ ["fleece","The Golden Fleece","Jason crossed the known world for it. It was hanging on a tree.","Myth","rare",0],
+ ["apple","The Golden Apple","Addressed “to the fairest”. It started the Trojan War.","Myth","rare",0],
+ ["rose","Midas' Rose","The first thing Midas touched. It went well, briefly.","Myth","rare",0],
+ ["goose","The Golden Egg","The goose was the asset. The egg was the yield.","Crypto","common",0],
+ ["agamemnon","The Mask of Agamemnon","Found by Schliemann in 1876. Probably not Agamemnon's.","History","super",0],
+ ["spoon","The Spoon","For anyone born with one.","Playful","common",0],
+ ["dice","The Dice","Fortuna's other tool.","Playful","common",0],
+ ["clover","The Clover","Roughly 1 in 5,000 clovers has four leaves. Gold ones are rarer.","Playful","common",0],
+ ["kintsugi","Kintsugi","Japanese repair with gold. The crack stays, and becomes the best part.","History","rare",0],
+ ["dore","The Doré Bar","Straight from the mine and only partly gold. Refining starts here.","Mine to vault","common",0],
+ ["assay","The Fire Assay","The oldest reliable way to measure gold, and still the reference method.","Mine to vault","rare",0],
+ ["mould","The Mould","A few minutes after the pour, still cooling.","Mine to vault","common",0],
+ ["stamp","The Hallmark","Serial, fineness, refiner. Three marks that make a bar verifiable.","Mine to vault","rare",0],
+ ["strip","The Strip","Rolled to an exact thickness, so every blank weighs the same.","Mine to vault","common",0],
+ ["die","The Die","Lady Fortuna in reverse, cut into hardened steel.","Mine to vault","rare",0],
+ ["stack","The Vault","Where every bar ends up. DGLD's are in Ticino.","Mine to vault","super",0],
+ ["kiss","The Kiss","Klimt, 1908, from his Golden Period. The gold is real leaf.","Gold in art","super",0],
+ ["adele","Adele Bloch-Bauer I","Klimt, 1907. Looted in 1938, returned to the family in 2006.","Gold in art","super",0],
+ ["saliera","The Saliera","Cellini's salt cellar for Francis I. Stolen in 2003, found buried in a forest in 2006.","Gold in art","super",0],
+ ["annunciation","The Gold Ground","Sienese painters put gold behind the saints to mean heaven. It also meant money.","Gold in art","rare",0],
+ ["ravenna","The Mosaic","Gold tesserae set at slight angles, so the wall glitters as you walk past.","Gold in art","rare",0],
+ ["gates","The Gates of Paradise","Ghiberti spent 27 years on them. Michelangelo gave them the name.","Gold in art","rare",0],
+ ["goldhat","The Berlin Gold Hat","About 3,000 years old. The rings may be a calendar.","Gold in art","rare",0],
+ ["pectoral","The Scythian Pectoral","Found in a Ukrainian burial mound in 1971. Horses, griffins and lions, all in gold.","Gold in art","rare",0],
+ ["monolith","Monolith","Board-marked like concrete, about 8 times as dense.","Brutalist","rare",0],
+ ["fracture","Fracture","Concrete outside, gold inside. Most vaults work the same way.","Brutalist","super",0],
+ ["tower","Tower","Cantilevered gold beams. An architect's dream and an engineer's headache.","Brutalist","common",0],
+ ["ziggurat","Ziggurat","Stepped, heavy and very hard to steal.","Brutalist","common",0],
+ ["embedded","Embedded","A gold sphere half set in raw concrete. It's staying put.","Brutalist","common",0],
+ ["dgld_front","The DGLD Medallion","The D and the Swiss cross. One fine ounce of allocated gold per token.","DGLD","legendary",0],
+ ["dgld_back","The Reverse","Nested arches, the same lines that run through the DGLD site.","DGLD","super",0],
+];
+const TIER={common:"Common",rare:"Rare",super:"Super rare",legendary:"Legendary"};
+const byId=Object.fromEntries(CARDS.map(c=>[c[0],c]));
+const $=s=>document.querySelector(s);
+
+// boards
+const fig=(d,id,i)=>{const c=byId[id];return `<figure><img class="imgc" src="img/${d}/${id}.webp" alt="${c[1]}"><figcaption><span class="no">No. ${String(i).padStart(2,"0")} · ${TIER[c[4]]}</span><span class="nm">${c[1]}</span></figcaption></figure>`};
+$("#gridA").innerHTML=["dgld_front","fortuna","tut","kiss","goodbar","cheese"].map((id,i)=>fig("A",id,CARDS.findIndex(c=>c[0]===id)+1)).join("");
+$("#rowB").innerHTML=["fortuna","saliera","agamemnon","goose"].map(id=>`<img class="imgc" src="img/B/${id}.webp" alt="${byId[id][1]}">`).join("");
+$("#subD").innerHTML=["adele","saliera","watch","ladyfortuna"].map(id=>`<img class="imgc" src="img/D/${id}.webp" alt="${byId[id][1]}">`).join("");
+
+// library
+let dir="A",deck="all",pf="all",picks=new Set(),boards=new Set(),db=null;
+const decks=["all",...new Set(CARDS.map(c=>c[3]))];
+$("#deckf").innerHTML=decks.map(d=>`<option value="${d}">${d==="all"?"All decks":d}</option>`).join("");
+function render(){
+  const list=CARDS.filter(c=>(deck==="all"||c[3]===deck)&&(pf==="all"||["A","B","C","D","E"].some(d=>picks.has(c[0]+"_"+d))));
+  $("#lib").innerHTML=list.map(c=>`<article class="card"><div class="ph"><img loading="lazy" src="img/${dir}/${c[0]}.webp" alt="${c[1]}, direction ${dir}" data-id="${c[0]}"><span class="tier ${c[4]}">${TIER[c[4]]}</span>${c[5]?'<span class="orig">SETZ original</span>':''}</div>
+   <div class="bd"><span class="deck">${c[3]}</span><h4>${c[1]}</h4><p class="cap">${c[2]}</p></div>
+   <div class="picks">${["A","B","C","D","E"].map(d=>`<button data-pick="${c[0]}_${d}" class="${d===dir?"on":""}" aria-pressed="${picks.has(c[0]+"_"+d)}">${picks.has(c[0]+"_"+d)?"✓":""}${d}</button>`).join("")}</div></article>`).join("");
+  $("#count").textContent=`${list.length} shown · ${picks.size} picked`;
+  document.querySelectorAll(".like").forEach(b=>{const on=boards.has(b.dataset.board);b.setAttribute("aria-pressed",on);b.textContent=(on?"✓ Preferred ":"Prefer ")+b.dataset.board});
+}
+document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{dir=b.dataset.dir;document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+$("#deckf").onchange=e=>{deck=e.target.value;render()};
+$("#pickf").onchange=e=>{pf=e.target.value;render()};
+$("#lib").addEventListener("click",async e=>{
+  const im=e.target.closest("img[data-id]");
+  if(im){const c=byId[im.dataset.id];$("#lbimg").src=im.src;$("#lbimg").alt=c[1];$("#lbcap").textContent=`${c[1]} · ${c[2]}`;$("#lb").showModal();return}
+  const b=e.target.closest("button[data-pick]"); if(!b) return;
+  const k=b.dataset.pick,on=!picks.has(k);
+  on?picks.add(k):picks.delete(k); render();
+  if(!db){try{localStorage.setItem("iog_picks",JSON.stringify([...picks]))}catch(e){}return}
+  try{const [card,d]=k.split("_"); on?await db.doc("picks/"+k).set({card,dir:d,name:byId[card][1]}):await db.doc("picks/"+k).delete()}
+  catch(err){$("#status").textContent="That pick couldn't be saved ("+(err.code||"error")+"). You may only have view access."}
+});
+document.querySelectorAll(".like").forEach(b=>b.onclick=async()=>{
+  const k=b.dataset.board,on=!boards.has(k); on?boards.add(k):boards.delete(k); render();
+  if(!db){try{localStorage.setItem("iog_boards",JSON.stringify([...boards]))}catch(e){}return}
+  try{on?await db.doc("boards/"+k).set({dir:k,preferred:true}):await db.doc("boards/"+k).delete()}catch(err){$("#status").textContent="That vote couldn't be saved ("+(err.code||"error")+")."}
+});
+$("#lb").onclick=()=>$("#lb").close();
+render();
+
+(async()=>{
+  try{db=await window.claude?.use?.("db")}catch(e){db=null}
+  if(!db){
+    try{picks=new Set(JSON.parse(localStorage.getItem("iog_picks")||"[]"));boards=new Set(JSON.parse(localStorage.getItem("iog_boards")||"[]"))}catch(e){}
+    $("#status").textContent="Your picks are saved in this browser only. Send us your list, or a screenshot of the Picked only view.";render();return}
+  $("#status").textContent="Picks are shared with everyone who opens this page.";
+  db.collection("picks").onSnapshot(s=>{picks=new Set(s.docs.map(d=>d.id));render()},()=>{$("#status").textContent="Lost the connection to saved picks. Reload to try again."});
+  db.collection("boards").onSnapshot(s=>{boards=new Set(s.docs.map(d=>d.id));render()});
+})();
+</script>
+
+</body>
+</html>
